@@ -70,8 +70,7 @@ to your vagrantfile `vagrant up`
 #
 ## Provisioning Vagrant
 ### In the VirtualBox:
-### create a provision.sh file. Add this code in the file - 
-=======
+### create a provision.sh file. Add this code in the file.
  ### Bash scripting:
  - create a file called provision.sh
  - change permission of file `chmod +x provision.sh`
