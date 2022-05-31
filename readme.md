@@ -26,13 +26,10 @@
 
 ![devops-role-3](devops-role-3.png)
 ## What are the four pillars of DevOps?
-- Collaboration - Development and operations teams will work together as a functional team that communicates, shares feedback, and collaborates throughout the entire development and deployment cycle. Often, this means development and operations teams merge into a single team that works across the entire application lifecycle. The members of a DevOps team are responsible for ensuring quality deliverables across each facet of the product. 
-
-- Workflows and Automation - Good consistent workflow in the SDLC ensures all products follow the same flow, everyone knows what's happening, and everyone knows where the product sits in the development timeline. Automating as much of the software development lifecycle as possible gives developers more time to write code and develop new features. It helps to reduce human errors and increase team productivity, achieve continuous improvement with short iteration times allowing them to quickly respond to customer feedback.
-- Continuous improvement - is the practice of focusing on experimentation, minimising waste, and optimising for speed, cost, and ease of delivery. Continuous improvement is also tied to continuous delivery, allowing DevOps teams to continuously push updates that improve the efficiency of software systems. The constant pipeline of new releases means teams consistently push code changes that eliminate waste, improve development efficiency, and bring more customer value. 
--  Security and compliance - ensuring your product is secure and compliant. Secure in the way it runs, stores information, and handles personal information. And compliant in the laws where the software is being used as well as practices within the industry.
-
-![four pillars](four%20pillars.png)
+- Robustness
+- Flexibility
+- Cost effetive
+- East of use
 
 #
 # What is development environment? 
