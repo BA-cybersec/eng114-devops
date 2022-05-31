@@ -15,10 +15,24 @@ sudo systemctl start nginx
 #enable nginx
 sudo systemctl enable nginx
 
-cd ./app/app
+#download v6
+curl -sL https://deb.nodesource.com/setup_6.x | sudo -E bash -
 
+#install nodejs
+sudo apt-get install nodejs -y
+
+#install pm2
 sudo npm install pm2 -g
 
-npm install
+#download python stuff
+sudo apt-get install python-software-properties
 
-npm start -d
+#redirect to app folder
+cd /app/app/app/
+
+#npm install and d to detach
+npm install -d
+
+#start npm
+npm start
+

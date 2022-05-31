@@ -74,27 +74,17 @@ to your vagrantfile `vagrant up`
 ### In the VirtualBox:
 ### create a provision.sh file. Add this code in the file - 
 
-`#!bin/bash `
+- `#!bin/bash `
 
-`#update `
+- `#update sudo apt-get update -y`
 
-`sudo apt-get update -y`
+- `#upgrade sudo apt-get upgrade -y`
 
-`#upgrade `
+- `#install nginx sudo apt-get install nginx`
 
-`sudo apt-get upgrade -y`
+- `#start nginx sudo systemctl start nginx`
 
-`#install nginx`
-
-`sudo apt-get install nginx`
-
-`#start nginx`
-
-`sudo systemctl start nginx`
-
-`#enable nginx`
-
-`sudo systemctl enable nginx`
+- `#enable nginx sudo systemctl enable nginx`
 
 ### In the local host:
 -  `gem install bundler`
@@ -110,9 +100,39 @@ to your vagrantfile `vagrant up`
 
 ###  In the VirtualBox again:
 
--  `vagrant ssh` into ubuntu
+-  `vagrant ssh` into VirtualBox
 - `npm install`
 - `npm start`
 - Your app is now ready and listening on port 3000
 enter :3000 after the host address 192.168.10.100
--Once you enter, this will show as below:
+
+### To automate without SSH into VirtualBox
+- In the your local folder, add these commands into the provision.sh file.
+
+- `#update sudo apt-get update -y`
+
+- `#upgrade sudo apt-get upgrade -y`
+
+- `#install nginx sudo apt-get install nginx -y`
+
+- `#start nginx sudo systemctl start nginx`
+
+- `#enable nginx sudo systemctl enable nginx`
+
+- `#download v6 curl -sL https://deb.nodesource.com/setup_6.x | sudo -E bash -`
+
+- `#install nodejs sudo apt-get install nodejs -y`
+
+- `#install pm2 sudo npm install pm2 -g`
+
+- `#download python stuff sudo apt-get install python-software-properties`
+
+- `#redirect to app folder cd /app/app/app/`
+
+- `#npm install and d to detach npm install -d`
+
+- `#start npm npm start`
+
+- Do `vagrant reload`
+
+- Enter your IP adress including port 3000 (192.168.10.100:3000) on your browser. You will now see the Spartan App page if it is working correctly.
