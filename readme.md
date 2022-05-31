@@ -68,9 +68,6 @@ to your vagrantfile `vagrant up`
 
  #sudo stands for superuser do and execute command as root privilege.
 #
-## Provisioning Vagrant
-### In the VirtualBox:
-### create a provision.sh file. Add this code in the file.
  ### Bash scripting:
  - create a file called provision.sh
  - change permission of file `chmod +x provision.sh`
@@ -81,7 +78,10 @@ to your vagrantfile `vagrant up`
  - `enable nginx`
  - stopped then started
  - To run our script `sudo ./provision.sh`
- 
+ #
+ ## Provisioning Vagrant
+### In the VirtualBox:
+### create a provision.sh file. Add this code in the file.
 - `#!bin/bash `
 
 - `#update sudo apt-get update -y`
