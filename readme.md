@@ -26,13 +26,11 @@
 
 ![devops-role-3](devops-role-3.png)
 ## What are the four pillars of DevOps?
-- Collaboration - Development and operations teams will work together as a functional team that communicates, shares feedback, and collaborates throughout the entire development and deployment cycle. Often, this means development and operations teams merge into a single team that works across the entire application lifecycle. The members of a DevOps team are responsible for ensuring quality deliverables across each facet of the product. 
+- Robustness - By working together, the IT infrastructure are more robust as there is better collaboration.
 
-- Workflows and Automation - Good consistent workflow in the SDLC ensures all products follow the same flow, everyone knows what's happening, and everyone knows where the product sits in the development timeline. Automating as much of the software development lifecycle as possible gives developers more time to write code and develop new features. It helps to reduce human errors and increase team productivity, achieve continuous improvement with short iteration times allowing them to quickly respond to customer feedback.
-- Continuous improvement - is the practice of focusing on experimentation, minimising waste, and optimising for speed, cost, and ease of delivery. Continuous improvement is also tied to continuous delivery, allowing DevOps teams to continuously push updates that improve the efficiency of software systems. The constant pipeline of new releases means teams consistently push code changes that eliminate waste, improve development efficiency, and bring more customer value. 
--  Security and compliance - ensuring your product is secure and compliant. Secure in the way it runs, stores information, and handles personal information. And compliant in the laws where the software is being used as well as practices within the industry.
-
-![four pillars](four%20pillars.png)
+- Flexibility - able to work across different programming language and cloud platforms
+- Cost effective -faster release of software, less errors due to CI/CD, less manual work due to automation
+- East of use - easy to apply DevOps to any work environment.
 
 #
 # What is development environment? 
@@ -69,10 +67,24 @@ to your vagrantfile `vagrant up`
 - exit out of nginx `exit`
 
  #sudo stands for superuser do and execute command as root privilege.
+<<<<<<< HEAD
 #
 ## Provisioning Vagrant
 ### In the VirtualBox:
 ### create a provision.sh file. Add this code in the file - 
+=======
+ ### Bash scripting:
+ - create a file called provision.sh
+ - change permission of file `chmod +x provision.sh`
+ - First line MUST BE `#!/bin/bash
+ - Update and upgrade
+ - Installed nginx
+ - Start nginx
+ - `enable nginx`
+ - stopped then started
+ - To run our script `sudo ./provision.sh`
+ 
+>>>>>>> 8cf443c4b9bcc04deab95e1bb69cde214cdc7b3b
 
 - `#!bin/bash `
 
