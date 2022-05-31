@@ -27,6 +27,7 @@
 ![devops-role-3](devops-role-3.png)
 ## What are the four pillars of DevOps?
 - Robustness - By working together, the IT infrastructure are more robust as there is better collaboration.
+
 - Flexibility - able to work across different programming language and cloud platforms
 - Cost effective -faster release of software, less errors due to CI/CD, less manual work due to automation
 - East of use - easy to apply DevOps to any work environment.
