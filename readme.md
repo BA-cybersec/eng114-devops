@@ -69,5 +69,50 @@ to your vagrantfile `vagrant up`
 - exit out of nginx `exit`
 
  #sudo stands for superuser do and execute command as root privilege.
+#
+## Provisioning Vagrant
+### In the VirtualBox:
+### create a provision.sh file. Add this code in the file - 
 
+`#!bin/bash `
 
+`#update `
+
+`sudo apt-get update -y`
+
+`#upgrade `
+
+`sudo apt-get upgrade -y`
+
+`#install nginx`
+
+`sudo apt-get install nginx`
+
+`#start nginx`
+
+`sudo systemctl start nginx`
+
+`#enable nginx`
+
+`sudo systemctl enable nginx`
+
+### In the local host:
+-  `gem install bundler`
+-  `bundler`
+- run `rake spec` . Test will fail first time.
+- Install nodejs v6 using `sudo curl -sL https://deb.nodesource.com/setup_6.x | bash -`
+- `sudo apt-get install nodejs -y`
+- install `pm2`
+- `rake spec` again to check if tests passed. Once all tests are passed, follow the next step below.
+- open vagrantfile and add this code `config.vm.synced_folder ".", "/home/vagrant/app"` to sync app folder. This copy everything from current location create a folder called app - copy everything from localhost. Save the file
+
+- Do `vagrant reload` after this
+
+###  In the VirtualBox again:
+
+-  `vagrant ssh` into ubuntu
+- `npm install`
+- `npm start`
+- Your app is now ready and listening on port 3000
+enter :3000 after the host address 192.168.10.100
+-Once you enter, this will show as below:
