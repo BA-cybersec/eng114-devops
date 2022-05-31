@@ -67,7 +67,6 @@ to your vagrantfile `vagrant up`
 - exit out of nginx `exit`
 
  #sudo stands for superuser do and execute command as root privilege.
-<<<<<<< HEAD
 #
 ## Provisioning Vagrant
 ### In the VirtualBox:
@@ -84,8 +83,6 @@ to your vagrantfile `vagrant up`
  - stopped then started
  - To run our script `sudo ./provision.sh`
  
->>>>>>> 8cf443c4b9bcc04deab95e1bb69cde214cdc7b3b
-
 - `#!bin/bash `
 
 - `#update sudo apt-get update -y`
