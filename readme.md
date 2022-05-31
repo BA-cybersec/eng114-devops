@@ -67,5 +67,15 @@ to your vagrantfile `vagrant up`
 - exit out of nginx `exit`
 
  #sudo stands for superuser do and execute command as root privilege.
+ ### Bash scripting
+ - create a file called provision.sh
+ - change permission of file `chmod +x provision.sh`
+ - First line MUST BE `#!/bin/bash
+ - Update and upgrade
+ - Installed nginx
+ - Start nginx
+ - `enable nginx`
+ - stopped then started
+ 
 
 
