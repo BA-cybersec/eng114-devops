@@ -117,16 +117,6 @@ enter :3000 after the host address 192.168.10.100
 ### To automate without SSH into VirtualBox
 - In the your local folder, add these commands into the provision.sh file.
 
-- `#update sudo apt-get update -y`
-
-- `#upgrade sudo apt-get upgrade -y`
-
-- `#install nginx sudo apt-get install nginx -y`
-
-- `#start nginx sudo systemctl start nginx`
-
-- `#enable nginx sudo systemctl enable nginx`
-
 - `#download v6 curl -sL https://deb.nodesource.com/setup_6.x | sudo -E bash -`
 
 - `#install nodejs sudo apt-get install nodejs -y`
