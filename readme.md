@@ -28,7 +28,7 @@
 ## What are the four pillars of DevOps?
 - Robustness
 - Flexibility
-- Cost effetive
+- Cost effective
 - East of use
 
 #
