@@ -87,7 +87,7 @@ to your vagrantfile `vagrant up`
  - `config.vm.network "private_network", ip: "192.168.10.100" `
  - `#add ext script to run vagrant`
  - `config.vm.provision "shell", path: "./provision.sh", run: "always" `
- - `Sync app folder to virtualbox.`
+ Sync app folder to virtualbox.
  - `# Synced app folder`
  - `# cp everything from current location create a folder called app - copy everything from localhost `
  - `config.vm.synced_folder ".", "/home/vagrant/app" `
