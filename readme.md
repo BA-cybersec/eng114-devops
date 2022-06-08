@@ -149,3 +149,27 @@ enter :3000 after the host address 192.168.10.100
 - Do `vagrant reload`
 
 - Enter your IP adress including port 3000 (192.168.10.100:3000) on your browser. You will now see the Spartan App page if it is working correctly.
+#
+
+## What is AWS?
+
+## AWS best practices - naming convention
+- eng114_yourname_app
+- eng114_yourname_db
+eng114_yourname_bastion
+
+##
+
+## AWS Services(EC2)
+
+### creating EC2 instances 
+
+- Before using EC2, plan, design, develop
+
+- click create instances (not from template)
+
+- choose OS - Ubuntu 18.04
+
+- choose t2.micro
+
+
