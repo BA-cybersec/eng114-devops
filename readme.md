@@ -162,6 +162,9 @@ eng114_yourname_bastion
 
 ## AWS Services(EC2)
 
+
+![two-tier-architecture](two-tier-architecture.png)
+
 ### creating EC2 instances 
 
 - Before using EC2, plan, design, develop
