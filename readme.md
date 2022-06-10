@@ -203,17 +203,21 @@ eng114_yourname_bastion
 
 ![two-tier-architecture](two-tier-architecture.png)
 
+- On the AWS console, choose EC2
+
 ### creating EC2 instances 
 
 - Before using EC2, plan, design, develop
 
-- click create instances (not from template)
+- click launch instances (not from template)
 
 - choose OS - Ubuntu 18.04
 
 - choose t2.micro
 
 - add storage
+
+- choose network (VPC, subnets)
 
 - add tags
 
@@ -222,6 +226,13 @@ eng114_yourname_bastion
 - review and launch
 
 ### creating AMIs
+
+- select AMI from the left panel of console
+
+- lauch instance from  AMI
+
+- follow similar steps to creating instance
+- create AMI
 
 
 
