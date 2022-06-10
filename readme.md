@@ -185,17 +185,21 @@ enter :3000 after the host address 192.168.10.100
 
 - Go global in minutes – Easily deploy your application in multiple regions around the world with just a few clicks. This means you can provide lower latency and a better experience for your customers at minimal cost.
 
-## What is AWS?
+## How does cloud computing fit into DevOps?
 
-## AWS best practices - naming convention
+- DevOps automation is becoming cloud-centric. Most public and private cloud computing providers support DevOps systemically on their platform, including continuous integration and continuous development tools. This tight integration lowers the cost associated with on-premises DevOps automation technology, and provides centralized governance and control for a sound DevOps process. Many developers who enter into the process find that governance keeps them out of trouble, and it's easier to control this centrally via the cloud versus attempting to bring departments under control.
+
+- Cloud-based DevOps lessens the need to account for resources leveraged. Clouds leverage usage-based accounting, which tracks the use of resources by application, developer, user, data, etc. Traditional systems typically don't provide this service. When leveraging cloud-based resources, it's much easier to track costs of development resources and make adjustment as needed.
+#
+## What is AWS?
+- Amazon Web Services (AWS) is the world’s most comprehensive and broadly adopted cloud platform, offering over 200 fully featured services from data centers globally. - Millions of customers—including the fastest-growing startups, largest enterprises, and leading government agencies—are using AWS to lower costs, become more agile, and innovate faster.
+
+### AWS best practices - naming convention
 - eng114_yourname_app
 - eng114_yourname_db
 eng114_yourname_bastion
 
-##
-
 ## AWS Services(EC2)
-
 
 ![two-tier-architecture](two-tier-architecture.png)
 
