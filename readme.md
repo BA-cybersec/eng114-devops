@@ -199,4 +199,15 @@ eng114_yourname_bastion
 
 - choose t2.micro
 
+- add storage
+
+- add tags
+
+- add security group
+
+- review and launch
+
+### creating AMIs
+
+
 
