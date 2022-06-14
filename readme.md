@@ -371,3 +371,12 @@ eng114_yourname_bastion
 - create subscription
 - create topic
 - subscribe using your email
+
+## Application Load Balancer
+- Autoscaling automatically adjusts the amount of computational rescources based on the server load
+
+- Load Balancing distributes traffic between EC2 instances so that no one instance gets overwhelmed
+- Launch template
+- Type of LB -ALB Application Load Balancer: target group/listener group HTTP
+- ALB -attach required dependencies
+- Auto scaling group - attach this to ALB
