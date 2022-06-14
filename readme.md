@@ -239,42 +239,43 @@ eng114_yourname_bastion
 - create AMI
 
 ### User data script for automation
-- automation_app.py
+- Script for app instance
 - #!/bin/bash
 
-#Update and upgrade 
-sudo apt-get update -y
-sudo apt-get upgrade -y
+- #Update and upgrade 
+`sudo apt-get update -y`
+`sudo apt-get upgrade -y`
 
-#Install nginx
-sudo apt-get install nginx -y
-sudo systemctl start nginx
-sudo systemctl enable nginx
+- #Install nginx
+`sudo apt-get install nginx -y`
+`sudo systemctl start nginx`
+`sudo systemctl enable nginx`
 
-#Install nodejs and npm
-curl -sL https://deb.nodesource.com/setup_6.x | sudo -E bash -
-sudo apt-get install nodejs -y
-sudo apt-get install npm 
-sudo npm install pm2 -g
-sudo apt-get install python-software-properties -y
+- #Install nodejs and npm
+`curl -sL https://deb.nodesource.com/setup_6.x | sudo -E bash -`
+`sudo apt-get install nodejs -y`
+`sudo apt-get install npm `
+`sudo npm install pm2 -g`
+`sudo apt-get install python-software-properties -y`
 
-#Copy data from GitHub repo to AWS
-mkdir repo
-cd repo
-git clone https://github.com/BA-cybersec/eng114_devops.git
-cd eng114_devops/
+- #Copy data from GitHub repo to AWS
+`mkdir repo`
+`cd repo`
+`git clone https://github.com/BA-cybersec/eng114_devops.git`
+`cd eng114_devops/`
 
-#Copy default file to allow to forward from port 3000 to port 80 
-sudo mv default /etc/nginx/sites-available/default 
+- #Copy default file to allow to forward from port 3000 to port 80 
+`sudo mv default /etc/nginx/sites-available/default` 
 
-#Restart nginx
-sudo systemctl restart nginx
+- #Restart nginx
+`sudo systemctl restart nginx`
 
-#Make environment variable DB_HOST so that our app can connect to the database through port 27017
-sudo echo "export DB_HOST='mongodb://3.250.139.104:27017/posts'" >> /etc/bash.bashrc 
-source /etc/bash.bashrc
+- #Make environment variable DB_HOST so that our app can connect to the database through port 27017
+`sudo echo "export DB_HOST='mongodb://3.250.139.104:27017/posts'" >> /etc/bash.bashrc`
+`source /etc/bash.bashrc`
 
-sudo apt npm install
+- ##install npm
+`sudo apt npm install`
 
 #
 ## Amazon S3
