@@ -400,10 +400,10 @@ eng114_yourname_bastion
 - Choose subnets - eu-west-1a, 1b and 1c
 - choose app security group
 - add script in user data if needed for example
-- sudo apt-get update
-- sudo apt-get upgrade
-- sudo apt-get install nginx
-- click again on create launch template
+- `sudo apt-get update`
+- `sudo apt-get upgrade`
+- `sudo apt-get install nginx`
+- `click again on create launch template`
 ### Create auto scaling group
 - Name your auto scaling group
 - choose your launch template
