@@ -471,6 +471,7 @@ eng114_yourname_bastion
 ![target-group](target-group.jpg)
 
 - target tracking scaling policy 
+
 ![target-tracking-scaling](target-tracking-scaling.png)
 - target value = 20 or 50 during production 
 - scaling policies - none
