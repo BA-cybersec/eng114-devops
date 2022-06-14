@@ -246,4 +246,5 @@ eng114_yourname_bastion
 - enter sercet key
 - enter region `eu-west-1`
 - enter language `json`
+##install aws command line
 -`sudo pip3 install awscli`
