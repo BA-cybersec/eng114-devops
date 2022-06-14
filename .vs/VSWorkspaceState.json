@@ -1,6 +1,15 @@
 {
   "ExpandedNodes": [
-    ""
+    "",
+    "\\app\\app",
+    "\\app\\app\\app",
+    "\\app\\app\\app\\models",
+    "\\app\\app\\app\\public",
+    "\\app\\app\\app\\seeds",
+    "\\app\\app\\app\\test",
+    "\\app\\app\\environment",
+    "\\app\\app\\models"
   ],
+  "SelectedNode": "\\vagrant.txt",
   "PreviewInSolutionExplorer": false
 }
