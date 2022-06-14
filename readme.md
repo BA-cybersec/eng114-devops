@@ -247,4 +247,8 @@ eng114_yourname_bastion
 - enter region `eu-west-1`
 - enter language `json`
 ##install aws command line
--`sudo pip3 install awscli`
+- `sudo pip3 install awscli`
+## install python 3.7
+## install boto3
+## Create bucket
+- 
