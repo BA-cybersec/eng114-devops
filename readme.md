@@ -1,4 +1,4 @@
-<<<<<<< HEAD
+
 # DevOps 30/05/22
 ## What is DevOps?
 - DevOps is a set of practices and cultural philosophy that removes the barriers between traditionally siloed teams that are the development and operations teams. Under a DevOps model, development and operations teams work together across the entire software application life cycle, from development and test through deployment to operations. 
@@ -1015,4 +1015,4 @@ eng114_yourname_bastion
 - Errors - Errors can tell you about misconfigurations in your infrastructure, bugs in your application code, or broken dependencies. For example, a spike in error rate could indicate the failure of a database or network outage
 - Saturation - Saturation defines the load on your network and server resources. Every resource has a limit after which performance will degrade or become unavailable. 
 
->>>>>>> 51ca7b4e071a07f82960ebd763aecde38eb26151
+ vutbivghgkbjvjcgfcfxzgvxzhdgsdgffrghjfm
