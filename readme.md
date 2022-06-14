@@ -240,6 +240,9 @@ eng114_yourname_bastion
 - highly available
 - global service
 - scalable
+- Storage class:
+- Standard - frequent access. Data readily accessible.
+- Glacier - infrequent access. Takes time to access data. For archiving data
 ## How to configure into aws
 - `aws configure`
 - enter access key
