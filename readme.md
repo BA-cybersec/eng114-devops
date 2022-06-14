@@ -251,10 +251,10 @@ eng114_yourname_bastion
 ## install python 3.7
 ## install boto3
 ## Create bucket
-- `import boto3
+- `import boto3`
 
-s3 = boto3.client('s3')
+`s3 = boto3.client('s3')`
 
-s3.create_bucket(Bucket='eng114-bijay-bucket', CreateBucketConfiguration={
+`s3.create_bucket(Bucket='eng114-bijay-bucket', CreateBucketConfiguration={`
 
-    'LocationConstraint': 'eu-west-1'})`
+    `'LocationConstraint': 'eu-west-1'})`
