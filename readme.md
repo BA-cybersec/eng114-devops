@@ -387,11 +387,38 @@ eng114_yourname_bastion
 - Type of LB -ALB Application Load Balancer: target group/listener group HTTP
 - ALB -attach required dependencies
 - Auto scaling group - attach this to ALB
-### Create Autoscaling group
+### Create launch template for use auto scaling group
+- click on launch template under instances on left panel of console
 
-- Choose desired capacity = 2, minimum capacity = 2, maximum capacity = 3
+- click on create launch template
+- name your template
+- check box for provide autoscaling guidance
+- Add tags under template tags: Key = Name, Value = eng114-name-asg-lt
+- Choose Ubuntu 18.04 as amis
+- Instance type as t2.micro
+- choose key pair
 - Choose subnets - eu-west-1a, 1b and 1c
-
+- choose app security group
+- add script in user data if needed for example
+- sudo apt-get update
+- sudo apt-get upgrade
+- sudo apt-get install nginx
+- click again on create launch template
+### Create auto scaling group
+- Name your auto scaling group
+- choose your launch template
+- Choose availability zone and subnets - eu-west-1a, 1b and 1c
+- attach load balancer
+- type as application load balancer 
+- name load balancer
+- load balancer scheme - internet facing
+- create target group 
+- name target group
+- target tracking scaling policy 
+- target value = 20 or 50 during production 
+- scaling policies - none
+- Choose desired capacity = 2, minimum capacity = 2, maximum capacity = 3
+- create load balancer target group
 ### Connect or configure Amazon SNS notification to auto scaling group using AWS cli
 
 - run this command:
