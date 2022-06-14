@@ -226,6 +226,8 @@ eng114_yourname_bastion
 - add security group
 
 - review and launch
+- 
+- to automate running your python script, you can add it in user data under step 3 - configuring instance.
 
 ### creating AMIs
 
@@ -235,6 +237,45 @@ eng114_yourname_bastion
 
 - follow similar steps to creating instance
 - create AMI
+
+### User data script for automation
+- automation_app.py
+- #!/bin/bash
+
+#Update and upgrade 
+sudo apt-get update -y
+sudo apt-get upgrade -y
+
+#Install nginx
+sudo apt-get install nginx -y
+sudo systemctl start nginx
+sudo systemctl enable nginx
+
+#Install nodejs and npm
+curl -sL https://deb.nodesource.com/setup_6.x | sudo -E bash -
+sudo apt-get install nodejs -y
+sudo apt-get install npm 
+sudo npm install pm2 -g
+sudo apt-get install python-software-properties -y
+
+#Copy data from GitHub repo to AWS
+mkdir repo
+cd repo
+git clone https://github.com/BA-cybersec/eng114_devops.git
+cd eng114_devops/
+
+#Copy default file to allow to forward from port 3000 to port 80 
+sudo mv default /etc/nginx/sites-available/default 
+
+#Restart nginx
+sudo systemctl restart nginx
+
+#Make environment variable DB_HOST so that our app can connect to the database through port 27017
+sudo echo "export DB_HOST='mongodb://3.250.139.104:27017/posts'" >> /etc/bash.bashrc 
+source /etc/bash.bashrc
+
+sudo apt npm install
+
 #
 ## Amazon S3
 - can store any type of data
