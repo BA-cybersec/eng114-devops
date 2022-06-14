@@ -258,3 +258,13 @@ eng114_yourname_bastion
 `s3.create_bucket(Bucket='eng114-bijay-bucket', CreateBucketConfiguration={`
 
     `'LocationConstraint': 'eu-west-1'})`
+## upload file to s3 bucket
+- `import boto3`
+
+`s3 = boto3.client('s3')`
+
+`s3.upload_file(`
+`Filename = 'test1.txt',`
+`Bucket = 'eng114-bijay-bucket',`
+`Key = 'test1.txt'
+`)`
