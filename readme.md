@@ -233,6 +233,16 @@ eng114_yourname_bastion
 
 - follow similar steps to creating instance
 - create AMI
-
-
+#
+## Amazon S3
+- can store any type of data
+- No data limit
+- highly available
+- global service
+- scalable
+- `aws configure`
+- enter access key
+- enter sercet key
+- enter region `eu-west-1`
+- enter language `json`
 
