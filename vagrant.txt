@@ -1,1 +1,5 @@
+<<<<<<< HEAD
 vagrant
+=======
+vagrant
+>>>>>>> 51ca7b4e071a07f82960ebd763aecde38eb26151

@@ -1,2 +1,7 @@
+<<<<<<< HEAD
 .vagrant/
 ubuntu-xenial-16.04-cloudimg-console.log
+=======
+./vagrant
+ubuntu-xenial-16.04-clouding-console.log
+>>>>>>> 51ca7b4e071a07f82960ebd763aecde38eb26151
