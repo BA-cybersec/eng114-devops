@@ -199,9 +199,11 @@ enter :3000 after the host address 192.168.10.100
 - eng114_yourname_db
 eng114_yourname_bastion
 
-## AWS Services(EC2)
+## Two tier architecture in AWS
 
-![two-tier-architecture](two-tier-architecture.png)
+- ![two-tier-architecture](two-tier-architecture.png)
+
+## AWS Services(EC2)
 
 - On the AWS console, choose EC2
 
