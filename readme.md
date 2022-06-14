@@ -240,9 +240,10 @@ eng114_yourname_bastion
 - highly available
 - global service
 - scalable
+## How to configure into aws
 - `aws configure`
 - enter access key
 - enter sercet key
 - enter region `eu-west-1`
 - enter language `json`
-
+-`sudo pip3 install awscli`
