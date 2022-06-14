@@ -360,14 +360,58 @@ eng114_yourname_bastion
 `bucket_name = "eng114-bijay-bucket"`
 
 `client.delete_bucket(Bucket=bucket_name)`
+#
+
 
 # Monitoring and alert management
+![CW-Overview](CW-Overview.png)
+- Questions to ask -
+- What should we monitor?
+- When should we monitor?
+- Who should be responsible?
+- What should be the next steps?
+- Why should we monitor?
+- What aspects shoulf we monitor?
+- error logs
+- budgeting
+- uptime-access time-response time
+- security breaches
+- system tests/health
+- instance's health
+- CPU utilisation
+#
+## CloudWatch for monitoring and its use with other AWS services:
+![cloudwatch](cloudwatch.png)
+
+- Amazon CloudWatch monitors your Amazon Web Services (AWS) resources and the applications you run on AWS in real time. You can use CloudWatch to collect and track metrics, which are variables you can measure for your resources and applications.
+
+- The CloudWatch home page automatically displays metrics about every AWS service you use. You can additionally create custom dashboards to display metrics about your custom applications, and display custom collections of metrics that you choose.
+
+- You can create alarms that watch metrics and send notifications or automatically make changes to the resources you are monitoring when a threshold is breached.
+#
+
+### Amazon SNS to send notification or alarms to customers:
+
+![amazon-sns](amazon-sns.png)
+
+- Amazon Simple Notification Service (Amazon SNS) is a managed service that provides message delivery from publishers to subscribers. Publishers communicate asynchronously with subscribers by sending messages to a topic, which is a logical access point and communication channel. 
+
+- Clients can subscribe to the SNS topic and receive published messages using a supported endpoint type, such as Amazon Kinesis Data Firehose, Amazon SQS, AWS Lambda, HTTP, email, mobile push notifications, and mobile text messages (SMS).
+
+
+#
+## Setup for monitoring and alert management:
+
+- Enable detailed monitoring 
+![detailed-monitoring](detailed-monitoring.png)
 
 ### create alarm
+![create-alarm](create-alarm.png)
 - create alarm in CloudWatch
 - select metrics -> EC2 -> per instance metrics
-- select percentage 50 
+- select percentage 50
 - create dashboard
+![create-dashboard](create-dashboard.png)
 - go to simple notification service (sns)
 ### create topic
 - type standard
@@ -379,7 +423,11 @@ eng114_yourname_bastion
 - choose endpoint - subscribe using your email
 - then create subscription
 
-## Application Load Balancer
+## Autoscaling and load balancing
+
+### Application Load Balancer
+
+![auto-scaling-group-alb](auto-scaling-group-alb.png)
 - Autoscaling automatically adjusts the amount of computational rescources based on the server load
 
 - Load Balancing distributes traffic between EC2 instances so that no one instance gets overwhelmed
@@ -388,6 +436,7 @@ eng114_yourname_bastion
 - ALB -attach required dependencies
 - Auto scaling group - attach this to ALB
 ### Create launch template for use auto scaling group
+![create-launch-template](create-launch-template.jpg)
 - click on launch template under instances on left panel of console
 
 - click on create launch template
@@ -406,7 +455,9 @@ eng114_yourname_bastion
 - `sudo systemctl start nginx`
 - `sudo systemctl enable nginx`
 - click again on create launch template
-### Create auto scaling group
+### Auto scaling group
+![autoscaling-group2](autoscaling-group2.png)
+- create auto scaling group
 - Name your auto scaling group
 - choose your launch template
 - Choose availability zone and subnets - eu-west-1a, 1b and 1c
@@ -416,10 +467,16 @@ eng114_yourname_bastion
 - load balancer scheme - internet facing
 - create target group 
 - name target group
+
+![target-group](target-group.jpg)
+
 - target tracking scaling policy 
+![target-tracking-scaling](target-tracking-scaling.png)
 - target value = 20 or 50 during production 
 - scaling policies - none
-- Choose desired capacity = 2, minimum capacity = 2, maximum capacity = 3
+- Choose group size - desired capacity = 2, minimum capacity = 2, maximum capacity = 3
+
+![group-size](group-size.png)
 - create load balancer target group
 ### Connect or configure Amazon SNS notification to auto scaling group using AWS cli
 
@@ -437,8 +494,11 @@ eng114_yourname_bastion
 ### to find DNS of autoscaling group, 
 - click on load balancer on left panel of console.
 - select your application load balancer (ALB). Scroll down and under description you will find DNS of your autoscaling group.
+#
 
 ## Four golden signals for monitoring
+
+ ![four-golden-signals](four-golden-signals.jpg)
 - latency - Latency is the time it takes to send a request and receive a response. Latency is commonly measured from the server side but can also be measured from the client side to account for differences in network speed.
 
 - traffic - Traffic is a measure of the number of requests flowing across the network. These may be HTTP requests to your web server or API, or messages sent to a processing queue. Times of peak traffic can result in additional stress on your infrastructure and may push it to the limit, triggering downstream effects
