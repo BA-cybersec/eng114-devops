@@ -403,6 +403,8 @@ eng114_yourname_bastion
 - `sudo apt-get update`
 - `sudo apt-get upgrade`
 - `sudo apt-get install nginx`
+- `sudo systemctl start nginx`
+- `sudo systemctl enable nginx`
 - click again on create launch template
 ### Create auto scaling group
 - Name your auto scaling group
