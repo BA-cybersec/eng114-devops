@@ -389,7 +389,10 @@ eng114_yourname_bastion
 - Auto scaling group - attach this to ALB
 ### create Autoscaling group:
 
-
+- To connect or configure Amazon SNS notification to auto scaling group using AWS cli
+- run this command:
+- `aws autoscaling put-notification-configuration --auto-scaling-group-name my-asg --topic-arn arn --notification-types "autoscaling:EC2_INSTANCE_LAUNCH" "autoscaling:EC2_INSTANCE_TERMINATE"`
+- aws autoscaling put-notification-configuration --auto-scaling-group-name my-asg --topic-arn arn --notification-types "autoscaling:EC2_INSTANCE_LAUNCH" "autoscaling:EC2_INSTANCE_TERMINATE"
 - script for autoscaling group
 - `#!/bin/bash`
 `n=1`
