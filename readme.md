@@ -264,6 +264,14 @@ eng114_yourname_bastion
 - `sudo apt-get install python3.7`
 - `sudo update-alternatives --install /usr/bin/python3 python3 /usr/bin/python3.7 2`
 - `sudo update-alternatives --config python3`
+- If getting dkpg error
+- sudo apt update
+- sudo apt upgrade
+- sudo apt install python3.7
+- do alias python=python3
+- If getting boto3 no moduleerror:
+- do pip uninstall boto3
+- sudo pip install --target=/usr/lib/python3.6/dist-packages boto3
 ## install boto3
 - `pip install boto3`
 ## Create bucket
