@@ -380,3 +380,5 @@ eng114_yourname_bastion
 - Type of LB -ALB Application Load Balancer: target group/listener group HTTP
 - ALB -attach required dependencies
 - Auto scaling group - attach this to ALB
+- to find DNS of autoscaling group, click on load balancer on left panel of console.
+- select your application load balancer (ALB). Scroll down and under description you will find DNS of your autoscaling group.
