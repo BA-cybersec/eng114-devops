@@ -268,3 +268,28 @@ eng114_yourname_bastion
 `Bucket = 'eng114-bijay-bucket',`
 `Key = 'test1.txt'
 `)`
+
+## download file from s3 bucket
+- `import boto3`
+
+`s3 = boto3.client("s3")`
+
+`s3.download_file(`
+
+    `Bucket="eng114-bijay-bucket", Key="test1.txt", Filename="test1.txt"`
+## delete file from s3 bucket
+- `import boto3`
+
+`s3 = boto3.resource('s3')`
+
+`s3.Object('eng114-bijay-bucket', 'test1.txt').delete()`
+
+## delete s3 bucket
+- `import boto3`
+
+`s3 = boto3.client("s3")`
+
+`bucket_name = "eng114-bijay-bucket"`
+
+`client.delete_bucket(Bucket=bucket_name)`
+
