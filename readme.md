@@ -201,7 +201,7 @@ eng114_yourname_bastion
 
 ## Two tier architecture in AWS
 
-- ![two-tier-architecture](two-tier-architecture.png)
+- 
 
 ## AWS Services(EC2)
 
