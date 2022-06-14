@@ -389,6 +389,9 @@ eng114_yourname_bastion
 - Auto scaling group - attach this to ALB
 ### Create Autoscaling group
 
+- Choose desired capacity = 2, minimum capacity = 2, maximum capacity = 3
+- Choose subnets - eu-west-1a, 1b and 1c
+
 ### Connect or configure Amazon SNS notification to auto scaling group using AWS cli
 
 - run this command:
