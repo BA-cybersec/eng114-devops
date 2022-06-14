@@ -363,14 +363,21 @@ eng114_yourname_bastion
 
 # Monitoring and alert management
 
+### create alarm
 - create alarm in CloudWatch
 - select metrics -> EC2 -> per instance metrics
 - select percentage 50 
 - create dashboard
-- go to simple notifction service (sns)
-- create subscription
-- create topic
-- subscribe using your email
+- go to simple notification service (sns)
+### create topic
+- type standard
+- Name your topic
+- then click on create topic
+### create subscription
+- choose topic you want to use
+- choose protocol - email
+- choose endpoint - subscribe using your email
+- then create subscription
 
 ## Application Load Balancer
 - Autoscaling automatically adjusts the amount of computational rescources based on the server load
@@ -385,19 +392,11 @@ eng114_yourname_bastion
 
 - script for autoscaling group
 - `#!/bin/bash`
-
-
-
 `n=1`
-
 `while [ true ]`
-
 `do `
-
    ` echo "Increase load on our server x${n}"`
-
    ` n=$(( n+1 ))`
-
 `done`
 ### to find DNS of autoscaling group, 
 - click on load balancer on left panel of console.
