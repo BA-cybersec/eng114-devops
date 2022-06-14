@@ -361,3 +361,13 @@ eng114_yourname_bastion
 
 `client.delete_bucket(Bucket=bucket_name)`
 
+# Monitoring and alert management
+
+- create alarm in CloudWatch
+- select metrics -> EC2 -> per instance metrics
+- select percentage 50 
+- create dashboard
+- go to simple notifction service (sns)
+- create subscription
+- create topic
+- subscribe using your email
