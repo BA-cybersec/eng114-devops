@@ -574,3 +574,6 @@ We resolved a problem with single point of failure
 - Because NACLs function at the subnet level of a VPC, each NACL can be applied to one or more subnets, but each subnet is required to be associated with one—and only one—NACL.
 
 - NACLs are stateless - response traffic is subject to inbound and outbound rules.
+
+- Use cases:
+- For example if you wanted to remove a user's SSH access. In this case you have two choices — 1) Remove SSH inbound allow rule of that user in the Security Group Inbound Rule. 2) Add an NACL Rule explicitly denying traffic from their IP address. If you go with the first one, they would not lose thier SSH connection, this is due to the connection tracking behavior of Security Groups. If you go with the latter choice, NACL would immediately block his Connection. So in this case, it’s better to use a NACL Deny Rule rather than deleting a Security Group allow Rule.
