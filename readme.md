@@ -192,7 +192,8 @@ enter :3000 after the host address 192.168.10.100
 
 - Cloud-based DevOps lessens the need to account for resources leveraged. Clouds leverage usage-based accounting, which tracks the use of resources by application, developer, user, data, etc. Traditional systems typically don't provide this service. When leveraging cloud-based resources, it's much easier to track costs of development resources and make adjustment as needed.
 #
-## What is AWS?
+## What is AWS? 
+
 - Amazon Web Services (AWS) is the world’s most comprehensive and broadly adopted cloud platform, offering over 200 fully featured services from data centers globally. - Millions of customers—including the fastest-growing startups, largest enterprises, and leading government agencies—are using AWS to lower costs, become more agile, and innovate faster.
 
 ### AWS best practices - naming convention
@@ -202,7 +203,7 @@ eng114_yourname_bastion
 
 ## Two tier architecture in AWS
 
-- 
+![two-tier-architecture](two-tier-architecture.png)
 
 ## AWS Services(EC2)
 
@@ -506,4 +507,70 @@ eng114_yourname_bastion
 - Errors - Errors can tell you about misconfigurations in your infrastructure, bugs in your application code, or broken dependencies. For example, a spike in error rate could indicate the failure of a database or network outage
 - Saturation - Saturation defines the load on your network and server resources. Every resource has a limit after which performance will degrade or become unavailable. 
 
-g
+We resolved a problem with single point of failure
+- performance testing
+- load testing
+- stress testing
+- spike testing
+- SOAP testing
+
+## What is a VPC?
+
+
+
+- A virtual private cloud (VPC) is a secure, isolated private cloud hosted within a public cloud. Essentially, a VPC provisions logically isolated sections of a public cloud in order to provide a virtual private environment.
+
+### Why do we use it?
+
+- Amazon VPC enables you to build a virtual network in the AWS cloud - no VPNs, hardware, or physical datacenters required. You can define your own network space, and control how your network and the Amazon EC2 resources inside your network are exposed to the Internet. You can also leverage the enhanced security options in Amazon VPC to provide more granular access to and from the Amazon EC2 instances in your virtual network.
+
+### What are  the benefits of VPC?
+- Scalability: Because a VPC is hosted by a public cloud provider, customers can add more computing resources on demand.
+
+- Easy hybrid cloud deployment: It's relatively simple to connect a VPC to a public cloud or to on-premises infrastructure via the VPN. (Learn about hybrid clouds and their advantages.)
+
+- Better performance: Cloud-hosted websites and applications typically perform better than those hosted on local on-premises servers.
+
+- Better security: The public cloud providers that offer VPCs often have more resources for updating and maintaining the infrastructure, especially for small and mid-market businesses. For large enterprises or any companies that face extremely tight data security regulations, this is less of an advantage.
+#
+
+## What is internet gateway?
+- An internet gateway is a horizontally scaled, redundant, and highly available VPC component that allows communication between your VPC and the internet. 
+- An internet gateway enables resources (like EC2 instances) in your public subnets to connect to the internet if the resource has a public IPv4 address or an IPv6 address. Similarly, resources on the internet can initiate a connection to resources in your subnet using the public IPv4 address or IPv6 address. For example, an internet gateway enables you to connect to an EC2 instance in AWS using your local computer.
+
+- An internet gateway serves two purposes: to provide a target in your VPC route tables for internet-routable traffic, and to perform network address translation (NAT) for instances that have been assigned public IPv4 addresses. 
+#
+## What is a subnet?
+- A subnet, or subnetwork, is a network inside a network. Subnets make networks more efficient. Through subnetting, network traffic can travel a shorter distance without passing through unnecessary routers to reach its destination
+#
+## What is CIDR block?
+- Classless inter-domain routing (CIDR) is a set of Internet protocol (IP) standards that is used to create unique identifiers for networks and individual devices. The IP addresses allow particular information packets to be sent to specific computers. CIDR is based on the idea of subnet masks
+- CIDR IP addresses consist of two groups of numbers, which are also referred to as groups of bits. The most important of these groups is the network address, and it is used to identify a network or a sub-network (subnet). 
+- The lesser of the bit groups is the host identifier. The host identifier is used to determine which host or device on the network should receive incoming information packets. 
+- In contrast to classful routing, which categorizes addresses into one of three blocks, CIDR allows for blocks of IP addresses to be allocated to Internet service providers. The blocks are then split up and assigned to the provider’s customers. Until recently, IP addresses used the IPv4 CIDR standard, but because IPv4 addresses are nearly exhausted, a new standard known as IPv6 has been developed and will soon be implemented.
+
+- The ability to group blocks of addresses into a single routing network is the hallmark of CIDR, and the prefix standard used for interpreting IP addresses makes this possible. CIDR blocks share the first part of the bit sequence that comprises the binary representation of the IP address, and blocks are identified using the same decimal-dot CIDR notation system that is used for IPv4 addresses. 
+### How to create CIDR block?
+
+![cidr-block-route-table](cidr-block-route-table.png)
+- The CIDR notation consists of an IP address, a slash character (‘/’) and a decimal number from 0 to 32. Using this notation we take the IP address and we split it into two blocks of bits: the most significant bits, the network prefix represents the network, and the second block identifies the host in that network. The number after the slash character (the subnet masks) tells us how many bits we need to take for the network prefix. 
+
+- For example, let’s see 192.168.0.0/24:
+
+  IP Address: 192.168.0.0
+
+   Subnet Mask: 255.255.255.0
+
+   11000000 10101000 00000000 00000000
+
+   11111111   11111111   00000000 00000000
+
+- In this example, we use 24 bits for the network representation and the remaining 8 bits to identify hosts within this network. This means we’ve got 28 = 256 possible IP addresses for our hosts. In other words, we are sizing our network to 256 hosts. 
+#
+## What is NACLS?
+![nacl](nacl.png)
+- A network ACL (or NACL) controls traffic to or from a subnet according to a set of inbound and outbound rules. This means it represents network level security or NACL operate at a subnet level. For example, an inbound rule might deny incoming traffic from a range of IP addresses, while an outbound rule might allow all traffic to leave the subnet.
+
+- Because NACLs function at the subnet level of a VPC, each NACL can be applied to one or more subnets, but each subnet is required to be associated with one—and only one—NACL.
+
+- NACLs are stateless - response traffic is subject to inbound and outbound rules.
