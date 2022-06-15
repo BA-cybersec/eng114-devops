@@ -598,4 +598,5 @@ NACls work on a subnet level. Security group work on a instance level.
 #
 ## Redeployment of two tier architecture
 ![vpc-igw-app-db](vpc-igw-app-db.png)
-###
+
+- step 1 - launch your instance for app and db 
