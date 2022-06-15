@@ -578,3 +578,19 @@ We resolved a problem with single point of failure
 
 - Use cases:
 - For example if you wanted to remove a user's SSH access. In this case you have two choices — 1) Remove SSH inbound allow rule of that user in the Security Group Inbound Rule. 2) Add an NACL Rule explicitly denying traffic from their IP address. If you go with the first one, they would not lose thier SSH connection, this is due to the connection tracking behavior of Security Groups. If you go with the latter choice, NACL would immediately block his Connection. So in this case, it’s better to use a NACL Deny Rule rather than deleting a Security Group allow Rule.
+
+NACls work on a subnet level. Security group work on a instance level.
+#
+# VPC
+
+![vpc](vpc.jpg)
+- Step 1: Create a VPC in Ireland eu-west-1
+
+- Step 2: Create Internet Gateway.
+- Step 2.1: attach the internet gateway with your VPC
+- Step 3: create a subnet/s - associate subnet with your VPC.
+- Step 4: create a route table within your VPC
+- Step 4.1 - edit route table to add rules to connect to Internet Gateway(IG)
+- VPC submask = 10.0.0.0/16
+- Subnet = 10.0.1.0/24
+- My subnet = 10.0.3.0/24
