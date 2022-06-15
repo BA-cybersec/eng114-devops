@@ -590,7 +590,8 @@ NACls work on a subnet level. Security group work on a instance level.
 - Step 2.1: attach the internet gateway with your VPC
 - Step 3: create a subnet/s - associate subnet with your VPC.
 - Step 4: create a route table within your VPC
-- Step 4.1 - edit route table to add rules to connect to Internet Gateway(IG)
+- Step 4.1 edit route table to add rules to connect to Internet Gateway(IG)
+- step 4.2 associate route table with subnet
 - VPC submask = 10.0.0.0/16
 - Subnet = 10.0.1.0/24
 - My subnet = 10.0.3.0/24
