@@ -595,3 +595,7 @@ NACls work on a subnet level. Security group work on a instance level.
 - VPC submask = 10.0.0.0/16
 - Subnet = 10.0.1.0/24
 - My subnet = 10.0.3.0/24
+#
+## Redeployment of two tier architecture
+![vpc-igw-app-db](vpc-igw-app-db.png)
+###
