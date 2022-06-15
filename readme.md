@@ -552,7 +552,7 @@ We resolved a problem with single point of failure
 - The ability to group blocks of addresses into a single routing network is the hallmark of CIDR, and the prefix standard used for interpreting IP addresses makes this possible. CIDR blocks share the first part of the bit sequence that comprises the binary representation of the IP address, and blocks are identified using the same decimal-dot CIDR notation system that is used for IPv4 addresses. 
 ### How to create CIDR block?
 
-![cidr-block-route-table](cidr-block-route-table.png)
+ ![cidr-block-route-table](cidr-block-route-table.png)
 - The CIDR notation consists of an IP address, a slash character (‘/’) and a decimal number from 0 to 32. Using this notation we take the IP address and we split it into two blocks of bits: the most significant bits, the network prefix represents the network, and the second block identifies the host in that network. The number after the slash character (the subnet masks) tells us how many bits we need to take for the network prefix. 
 
 - For example, let’s see 192.168.0.0/24:
@@ -568,7 +568,8 @@ We resolved a problem with single point of failure
 - In this example, we use 24 bits for the network representation and the remaining 8 bits to identify hosts within this network. This means we’ve got 28 = 256 possible IP addresses for our hosts. In other words, we are sizing our network to 256 hosts. 
 #
 ## What is NACLS?
-![nacl](nacl.png)
+
+ ![nacl](nacl.png)
 - A network ACL (or NACL) controls traffic to or from a subnet according to a set of inbound and outbound rules. This means it represents network level security or NACL operate at a subnet level. For example, an inbound rule might deny incoming traffic from a range of IP addresses, while an outbound rule might allow all traffic to leave the subnet.
 
 - Because NACLs function at the subnet level of a VPC, each NACL can be applied to one or more subnets, but each subnet is required to be associated with one—and only one—NACL.
