@@ -594,9 +594,17 @@ NACls work on a subnet level. Security group work on a instance level.
 - step 4.2 associate route table with subnet
 - VPC submask = 10.0.0.0/16
 - Subnet = 10.0.1.0/24
-- My subnet = 10.0.3.0/24
+- My public subnet = 10.0.3.0/24
 #
 ## Redeployment of two tier architecture
 ![vpc-igw-app-db](vpc-igw-app-db.png)
 
-- step 1 - launch your instance for app and db 
+- step 1 - create your instance for app using your app ami
+- step 2 - when creating instance for app choose your VPC you made earlier and choose the public subnet you made earlier
+-  step 3 - For security group, allow SSH for port 22 to your IP and HTTP for port 80
+- step 4 - create another subnet for db. This would be private subnet. The CIDR block for this subnet would be 10.0.14.0/24. Associate this subnet with your VPC you made earlier.
+
+- step 5  - create a db instance using your db ami. 
+- step 6 - when creating instance for db choose your VPC and choose private subnet as your subnet.
+-  step 7 - disable auto assign public ip
+- step 8 - For security group, allow SSH for port 22 to your IP and port 27017 for app ip.
