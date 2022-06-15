@@ -598,7 +598,6 @@ NACls work on a subnet level. Security group work on a instance level.
 #
 ## Redeployment of two tier architecture
 ![vpc-igw-app-db](vpc-igw-app-db.png)
-
 - step 1 - create your instance for app using your app ami
 - step 2 - when creating instance for app choose your VPC you made earlier and choose the public subnet you made earlier
 -  step 3 - For security group, allow SSH for port 22 to your IP and HTTP for port 80
@@ -608,3 +607,9 @@ NACls work on a subnet level. Security group work on a instance level.
 - step 6 - when creating instance for db choose your VPC and choose private subnet as your subnet.
 -  step 7 - disable auto assign public ip
 - step 8 - For security group, allow SSH for port 22 to your IP and port 27017 for app ip.
+- step 9 ssh into your app instance
+- step 10 `cd /etc`
+- step 11 `chmod 777 bash.bashrc`
+- step 12 `sudo echo "export DB_HOST=mongodb://your_private_db_ip:27017/posts" >> bash.bashrc`
+- step 13 `source bash.bashrc`
+- step 14 `npm start`
