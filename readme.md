@@ -616,6 +616,8 @@ NACls work on a subnet level. Security group work on a instance level.
 #
 ## CICD with Jenkins
 
+
+
 ### What is Continuous Integration?
 -  Continuous Integration  means that the developer's working copies on local are synch with a shared master branch several times a day.
 
@@ -623,20 +625,20 @@ NACls work on a subnet level. Security group work on a instance level.
 
 ### What is the difference between CD and CDE - use cases?
 
+![diff-cd-cde](diff-cd-cde.png)
+![continuous-delivery](continuous-delivery.png)
 - Continuous Delivery is an extension of continuous integration to make sure that you can release new changes to your customers quickly in a sustainable way. This means that on top of having automated your testing, you also have automated your release process and you can deploy your application at any point of time by clicking on a button. In continuous Delivery the deployment is completed manually.
 
-![continuous-delivery](continuous-delivery.png)
-- Continuous Deployment goes one step further than continuous delivery, with this practice, every change that passes all stages of your production pipeline is released to your customers, there is no human intervention, and only a failed test will prevent a new change to be deployed to production
+- So in essence, Continuous Delivery is described as the logical evolution of continuous integration which is to always be able to put a product into production.
 
 ![continuous-deployment](continuous-deployment.png)
 
+- Continuous Deployment goes one step further than continuous delivery, with this practice, every change that passes all stages of your production pipeline is released to your customers, there is no human intervention, and only a failed test will prevent a new change to be deployed to production
 
-- Continuous Delivery is described as the logical evolution of continuous integration: Always be able to put a product into production!
-
-- Continuous Deployment is described as the logical next step after continuous delivery: Automatically deploy the product into production whenever it passes QA
-
+- So in essence, Continuous Deployment is described as the logical next step after continuous delivery which is to automatically deploy the production into production whenever it passes QA
 
 ### What is Jenkins?
+![jenkins-logo](jenkins-logo.png)
 - Jenkins is an open-source automation server in which the central build and CI process take place. It is a Java-based program with packages for Windows, macOS, & Linux
 
 ### What are the benefits of CICD pipeline?
@@ -650,4 +652,7 @@ NACls work on a subnet level. Security group work on a instance level.
 - Other tools available are circleci, TeamCity, Bamboo and GitLab
 
 ### Why Jenkins?
+![jenkins-importance](jenkins-importance.png)
 - With great range of plugins available, Jenkins supports building, deploying, and automating for software development projects, easy installation, simple and user-friendly interface, extensible with huge community-contributed plugin resource, easy environment configuration in user interface & supports distributed builds with master-slave architecture
+
+- Cost benefit analysis
