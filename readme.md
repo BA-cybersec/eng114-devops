@@ -681,9 +681,13 @@ using this command below
 - cat the .pub key and copy the whole script. It will look like ssh-rsa xahdkajustaexample.
 - go to your GitHub repo and go to settings
 - go to deploy key and copy the pub key to our GitHub using the add deploy key tab
+
 ![jenkins-1](jenkins-1.png)
+
 - go to code tab, click the ssh tab and copy your repo link
+
 ![jenkins-2](jenkins-2.png)
+
 - go to git bash and `git clone repo-link`
 - If you get repo exist problem then make a new folder and git clone in that folder.
 - If you get permission denied error then use this command to so that key is attached to your account:
@@ -698,5 +702,41 @@ using this command below
 - If test works, you will see change in your readme.md in your GitHub
 #
 ### Creating jobs in Jenkins
+- env testing for jenkins
+- date 
 
-- 
+![jenkins-3](jenkins-3.png)
+
+- click on new item
+- enter name
+- click on freestyle project
+- click ok
+
+![jenkins-4](jenkins-4.png)
+
+- add description
+
+![jenkins-5](jenkins-5.png)
+
+- check discard old builds and keep max number of builds to 3
+
+- go further down to build section and click on execute
+shell
+
+![jenkins-6](jenkins-6.png)
+
+- add this command in the box: `uname -a`
+
+![jenkins-7](jenkins-7.png)
+
+- go down to post-build actions section and click on trigger only if build is stable
+- save job
+
+![jenkins-8](jenkins-8.png)
+
+- click on build now on left panel and now your job has been created.
+- If job is successful = blue, failed = red, cloud if 50/50
+
+- build a second job for checking zone. Following the same step as above but use `date` for the command
+
+- click on console output to see if your job is successful and see more details on output.
