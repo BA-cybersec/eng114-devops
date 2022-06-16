@@ -613,3 +613,14 @@ NACls work on a subnet level. Security group work on a instance level.
 - step 12 `sudo echo "export DB_HOST=mongodb://your_private_db_ip:27017/posts" >> bash.bashrc`
 - step 13 `source bash.bashrc`
 - step 14 `npm start`
+#
+## CICD
+
+### What is Jenkins?
+- Jenkins is an open-source automation server in which the central build and CI process take place. It is a Java-based program with packages for Windows, macOS, & Linux
+
+### What are the other tools available for CICD pipleline?
+- Other tools available are circleci, TeamCity, Bamboo and GitLab
+
+### Why Jenkins?
+- With great range of plugins available, Jenkins supports building, deploying, and automating for software development projects, easy installation, simple and user-friendly interface, extensible with huge community-contributed plugin resource, easy environment configuration in user interface & supports distributed builds with master-slave architecture
