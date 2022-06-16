@@ -614,7 +614,7 @@ NACls work on a subnet level. Security group work on a instance level.
 - step 13 `source bash.bashrc`
 - step 14 `npm start`
 #
-## CICD with Jenkins
+## CI/CD
 
 ![cicd-pipeline](cicd-pipeline.png)
 
@@ -660,4 +660,24 @@ NACls work on a subnet level. Security group work on a instance level.
 ![jenkins-importance](jenkins-importance.png)
 - With great range of plugins available, Jenkins supports building, deploying, and automating for software development projects, easy installation, simple and user-friendly interface, extensible with huge community-contributed plugin resource, easy environment configuration in user interface & supports distributed builds with master-slave architecture
 
-- Cost benefit analysis
+- When to use or not use Jenkins? - Cost benefit analysis
+- increments. functionality being built.
+
+#
+## CICD with Jenkins
+
+![jenkins-pl](jenkins-pl.png)
+
+SSH a connection between GitHub 
+- generate ssh key pair on localhost in the .ssh folder
+using this command below
+- `ssh-keygen -t rsa -b 4096 -C "your_email@example.com"`
+- `cd .ssh` and do `ls`
+- you will find two key files of same name - one with .pub
+- cat the .pub key and copy the whole script. It will look like ssh-rsa xahdkajustaexample.
+- go to your GitHub repo and go to settings
+- go to deploy key and copy the pub key to our GitHub using the add deploy key tab
+![jenkins-1](jenkins-1.png)
+- go to code tab, click the ssh tab and copy your repo link
+- go to git bash and `git clone repo-link`
+test the SSH connection
