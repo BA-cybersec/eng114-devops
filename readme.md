@@ -616,7 +616,7 @@ NACls work on a subnet level. Security group work on a instance level.
 #
 ## CICD with Jenkins
 
-
+![cicd-pipeline](cicd-pipeline.png)
 
 ### What is Continuous Integration?
 -  Continuous Integration  means that the developer's working copies on local are synch with a shared master branch several times a day.
@@ -625,7 +625,6 @@ NACls work on a subnet level. Security group work on a instance level.
 
 ### What is the difference between CD and CDE - use cases?
 
-![diff-cd-cde](diff-cd-cde.png)
 ![continuous-delivery](continuous-delivery.png)
 - Continuous Delivery is an extension of continuous integration to make sure that you can release new changes to your customers quickly in a sustainable way. This means that on top of having automated your testing, you also have automated your release process and you can deploy your application at any point of time by clicking on a button. In continuous Delivery the deployment is completed manually.
 
@@ -637,7 +636,10 @@ NACls work on a subnet level. Security group work on a instance level.
 
 - So in essence, Continuous Deployment is described as the logical next step after continuous delivery which is to automatically deploy the production into production whenever it passes QA
 
+![diff-cd-cde](diff-cd-cde.png)
+
 ### What is Jenkins?
+
 ![jenkins-logo](jenkins-logo.png)
 - Jenkins is an open-source automation server in which the central build and CI process take place. It is a Java-based program with packages for Windows, macOS, & Linux
 
@@ -649,9 +651,12 @@ NACls work on a subnet level. Security group work on a instance level.
 - another benefits of a CI/CD pipeline is you can roll back changes quickly. If any new code changes break the production application, you can immediately return the application to its previous state. Usually, the last successful build gets immediately deployed to prevent production outages. The world is moving toward rapid release cycles, and CI/CD pipelines have accelerated the release rate. With careful planning and implementation, such a pipeline can help find defects faster, implement fixes immediately, and increase overall customer satisfaction
 
 ### What are the other tools available for CICD pipleline?
+
+![cicd-tools](cicd-tools.png)
 - Other tools available are circleci, TeamCity, Bamboo and GitLab
 
 ### Why Jenkins?
+
 ![jenkins-importance](jenkins-importance.png)
 - With great range of plugins available, Jenkins supports building, deploying, and automating for software development projects, easy installation, simple and user-friendly interface, extensible with huge community-contributed plugin resource, easy environment configuration in user interface & supports distributed builds with master-slave architecture
 
