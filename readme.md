@@ -682,8 +682,6 @@ using this command below
 - go to your GitHub repo and go to settings
 - go to deploy key and copy the pub key to our GitHub using the add deploy key tab
 
-![jenkins-1](jenkins-1.png)
-
 - go to code tab, click the ssh tab and copy your repo link
 
 ![jenkins-2](jenkins-2.png)
