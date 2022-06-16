@@ -664,9 +664,13 @@ NACls work on a subnet level. Security group work on a instance level.
 - increments. functionality being built.
 
 #
-## CICD with Jenkins
+### CICD with Jenkins
 
 ![jenkins-pl](jenkins-pl.png)
+
+- If test pass, master node received the response and push to github
+You need to make sure master node doesn’t break. Master node is t2.medium. Agent node is t2.micro
+#
 
 SSH a connection between GitHub 
 - generate ssh key pair on localhost in the .ssh folder
@@ -679,5 +683,20 @@ using this command below
 - go to deploy key and copy the pub key to our GitHub using the add deploy key tab
 ![jenkins-1](jenkins-1.png)
 - go to code tab, click the ssh tab and copy your repo link
+![jenkins-2](jenkins-2.png)
 - go to git bash and `git clone repo-link`
-test the SSH connection
+- If you get repo exist problem then make a new folder and git clone in that folder.
+- If you get permission denied error then use this command to so that key is attached to your account:
+- `eval "$(ssh-agent -s)"`
+- `ssh-add ~/.ssh/your_key_name`
+
+- do `ls` and you will see the app folder which we will need later
+
+- test the SSH connection by editing readme.md. 
+- `git add`, ` git commit -m` and `git push -u origin main` readme.md to github
+
+- If test works, you will see change in your readme.md in your GitHub
+#
+### Creating jobs in Jenkins
+
+- 
