@@ -614,10 +614,37 @@ NACls work on a subnet level. Security group work on a instance level.
 - step 13 `source bash.bashrc`
 - step 14 `npm start`
 #
-## CICD
+## CICD with Jenkins
+
+### What is Continuous Integration?
+-  Continuous Integration  means that the developer's working copies on local are synch with a shared master branch several times a day.
+
+![continous-integration](continous-integration.png)
+
+### What is the difference between CD and CDE - use cases?
+
+- Continuous Delivery is an extension of continuous integration to make sure that you can release new changes to your customers quickly in a sustainable way. This means that on top of having automated your testing, you also have automated your release process and you can deploy your application at any point of time by clicking on a button. In continuous Delivery the deployment is completed manually.
+
+![continuous-delivery](continuous-delivery.png)
+- Continuous Deployment goes one step further than continuous delivery, with this practice, every change that passes all stages of your production pipeline is released to your customers, there is no human intervention, and only a failed test will prevent a new change to be deployed to production
+
+![continuous-deployment](continuous-deployment.png)
+
+
+- Continuous Delivery is described as the logical evolution of continuous integration: Always be able to put a product into production!
+
+- Continuous Deployment is described as the logical next step after continuous delivery: Automatically deploy the product into production whenever it passes QA
+
 
 ### What is Jenkins?
 - Jenkins is an open-source automation server in which the central build and CI process take place. It is a Java-based program with packages for Windows, macOS, & Linux
+
+### What are the benefits of CICD pipeline?
+- Finding and fixing bugs late in the development process is expensive and time-consuming. This is especially true when there are issues with features that have already been released to production. With a CI/CD pipeline, you can test and deploy code more frequently, giving testers the ability to detect issues as soon as they occur and to fix them immediately. You are essentially mitigating risks in real time.
+
+- Organizations are moving toward releasing features multiple times a day. This is not an easy task but with a seamless CI/CD pipeline, multiple daily releases can be made a reality. Teams can build, test and deploy features automatically with almost no manual intervention. 
+
+- another benefits of a CI/CD pipeline is you can roll back changes quickly. If any new code changes break the production application, you can immediately return the application to its previous state. Usually, the last successful build gets immediately deployed to prevent production outages. The world is moving toward rapid release cycles, and CI/CD pipelines have accelerated the release rate. With careful planning and implementation, such a pipeline can help find defects faster, implement fixes immediately, and increase overall customer satisfaction
 
 ### What are the other tools available for CICD pipleline?
 - Other tools available are circleci, TeamCity, Bamboo and GitLab
