@@ -374,6 +374,10 @@ eng114_yourname_bastion
 ![CW-Overview](CW-Overview.png)
 - Questions to ask -
 - What should we monitor?
+- number of users-network
+- CPU utilisation
+- memory availability
+- Status 200- API to check health status of the instance
 - When should we monitor?
 - Who should be responsible?
 - What should be the next steps?
@@ -385,7 +389,6 @@ eng114_yourname_bastion
 - security breaches
 - system tests/health
 - instance's health
-- CPU utilisation
 #
 ## CloudWatch for monitoring and its use with other AWS services:
 ![cloudwatch](cloudwatch.png)
