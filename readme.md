@@ -743,3 +743,71 @@ shell
 - build a second job for checking zone. Following the same step as above but use `date` for the command
 
 - click on console output to see if your job is successful and see more details on output.
+
+### Second iteration job
+
+- create a new job
+
+- before doing this, git clone app folder.
+
+- Copy app folder and environment folder to my local host where the github repo is
+- Git add ., Git commit, Git push to my repo
+ 
+
+![!jenkins-9](jenkins-9.png)
+
+- this time, check GitHub project and enter the http of your GitHub repo in project url
+
+- go down to office 365 connector section and check restrict where this project can be run. 
+- Enter agent node on label expression.
+
+![jenkins-10](jenkins-10.png)
+
+- Go down to source code management. Click on git and enter the repo url of ssh
+- enter your credentials by choosing from the scroll bar. Click add to add your private key you copied when you `cat` your private key 
+
+![jenkins-12](jenkins-12.png)
+
+- enter main for branches to build
+- go down to build environment section and check provide node and npm bin/folder to PATH
+- go to build and choose execute shell
+- enter this script
+- `cd app` `npm install` `npm test`
+
+#
+### Create a webhook and implementing it to the job
+
+- To create a webhook, go to settings on your GitHub repo
+- click on webhook on left panel
+![jenkins-13](jenkins-13.png)
+- click add webhook
+- add your jenkins url/githug-webhook/ on payload url. Choose application/json on content type
+
+![jenkins-14](jenkins-14.png)
+
+- choose let me individual events and check pushes. Check active as well.
+- Now we need to make it so that webhook connects to Jenkins
+- Go back to Jenkins and configure your job.
+- go to build trigger section and check GitHub hook trigger for GITScm polling
+- To test it, make changes to your readme.md and push it to GitHub. If it works, then you will see a new build being created automatically and you can see the commit and push you made on the change section of the build.
+#
+### Create a second iteration using dev branch
+
+- create a second job
+- do same step as before however this time:
+- Create a dev branch on local host using git bash
+
+- `git branch dev`
+- change to dev
+- `git checkout dev`
+- Go back to Jenkins
+- configure the job
+- go to source code management and change branch to build from main to dev
+- go down to post-build actions
+- check push only if build succeeds
+- check merge result
+- click on branches and enter main for branches to push and enter origin for target remote name
+- Back on git bash,
+- edit readme.md
+- git add ., commit and push to GitHub
+- Go back to Jenkins. If test is successful, you will see a new build and you will see any changes you made to your readme.md in your main and dev branch. This means that whatever you push from your dev branch to jenkins have now been pushed to your main branch or your dev and main branch merge if test pass.
