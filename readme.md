@@ -777,7 +777,9 @@ shell
 
 - To create a webhook, go to settings on your GitHub repo
 - click on webhook on left panel
+
 ![jenkins-13](jenkins-13.png)
+
 - click add webhook
 - add your jenkins url/githug-webhook/ on payload url. Choose application/json on content type
 
