@@ -806,6 +806,7 @@ shell
 - Go back to Jenkins
 - configure the job
 - go to source code management and change branch to build from main to dev
+- ![jenkins-15](jenkins-15.png)
 - go down to post-build actions
 - check push only if build succeeds
 - check merge result
