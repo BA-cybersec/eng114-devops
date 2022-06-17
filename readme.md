@@ -1,5 +1,6 @@
 - test a ssh connection
 - cicd fourth test push
+- cicd fifth test push
 # DevOps 30/05/22
 ## What is DevOps?
 - DevOps is a set of practices and cultural philosophy that removes the barriers between traditionally siloed teams that are the development and operations teams. Under a DevOps model, development and operations teams work together across the entire software application life cycle, from development and test through deployment to operations. 
