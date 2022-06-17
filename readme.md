@@ -278,7 +278,7 @@ eng114_yourname_bastion
 `sudo systemctl restart nginx`
 
 - #Make environment variable DB_HOST so that our app can connect to the database through port 27017
-`sudo echo "export DB_HOST='mongodb://3.250.139.104:27017/posts'" >> /etc/bash.bashrc`
+`sudo echo "export DB_HOST='mongodb://public ip of your DB:27017/posts'" >> /etc/bash.bashrc`
 `source /etc/bash.bashrc`
 
 - ##install npm
@@ -330,7 +330,7 @@ eng114_yourname_bastion
 
 `s3 = boto3.client('s3')`
 
-`s3.create_bucket(Bucket='eng114-bijay-bucket', CreateBucketConfiguration={`
+`s3.create_bucket(Bucket='name of your bucket', CreateBucketConfiguration={`
 
     `'LocationConstraint': 'eu-west-1'})`
 ## upload file to s3 bucket
@@ -340,7 +340,7 @@ eng114_yourname_bastion
 
 `s3.upload_file(`
 `Filename = 'test1.txt',`
-`Bucket = 'eng114-bijay-bucket',`
+`Bucket = 'name of your bucket',`
 `Key = 'test1.txt'
 `)`
 
@@ -351,20 +351,20 @@ eng114_yourname_bastion
 
 `s3.download_file(`
 
-    `Bucket="eng114-bijay-bucket", Key="test1.txt", Filename="test1.txt"`
+    `Bucket="name of bucket", Key="test1.txt", Filename="test1.txt"`
 ## delete file from s3 bucket
 - `import boto3`
 
 `s3 = boto3.resource('s3')`
 
-`s3.Object('eng114-bijay-bucket', 'test1.txt').delete()`
+`s3.Object('name of your bucket', 'test1.txt').delete()`
 
 ## delete s3 bucket
 - `import boto3`
 
 `s3 = boto3.client("s3")`
 
-`bucket_name = "eng114-bijay-bucket"`
+`bucket_name = "name of your bucket"`
 
 `client.delete_bucket(Bucket=bucket_name)`
 #
