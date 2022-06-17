@@ -232,6 +232,8 @@ eng114_yourname_bastion
 
 - add security group
 
+- create or choose existing key
+
 - review and launch
 - 
 - to automate running your python script, you can add it in user data under step 3 - configuring instance.
