@@ -209,10 +209,8 @@ eng114_yourname_bastion
 ## Two tier architecture in AWS
 
 ![two-tier-architecture](two-tier-architecture.png)
-
-## AWS Services(EC2)
-
-- On the AWS console, choose EC2
+#
+## MongoDB setup on AWS
 
 ### creating EC2 instances 
 
@@ -235,7 +233,7 @@ eng114_yourname_bastion
 - create or choose existing key
 
 - review and launch
-- 
+
 - to automate running your python script, you can add it in user data under step 3 - configuring instance.
 
 ### creating AMIs
