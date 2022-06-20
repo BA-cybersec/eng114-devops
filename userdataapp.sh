@@ -16,14 +16,6 @@ sudo apt-get install npm
 sudo npm install pm2 -g
 sudo apt-get install python-software-properties -y
 
-# Copy codebase from Github repo
-#mkdir repo
-#cd repo
-#git clone https://github.com/hghazli56/eng114_devops.git
-#cd eng114_devops/
-
-# Copy premade default file to nginx configuration 
-# This will forward the applications original port(3000) to the servers defult port(80) 
 sudo mv default /etc/nginx/sites-available/default 
 
 # Restart nginx for configuration to take effect 
@@ -34,16 +26,4 @@ sudo systemctl enable nginx
 sudo echo "export DB_HOST='mongodb://10.0.18.186:27017/posts'" >> /etc/bash.bashrc 
 source /etc/bash.bashrc
 
-#cd
 
-#cd ..
-
-#cd ..
-
-#cd repo/eng114_devops/app/app/
-
-#sudo apt npm install
-
-#npm install
-
-#nohup node app.js > /dev/null 2>&1 &
