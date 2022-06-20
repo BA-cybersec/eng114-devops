@@ -210,10 +210,8 @@ eng114_yourname_bastion
 ## Two tier architecture in AWS
 
 ![two-tier-architecture](two-tier-architecture.png)
-
-## AWS Services(EC2)
-
-- On the AWS console, choose EC2
+#
+## MongoDB setup on AWS
 
 ### creating EC2 instances 
 
@@ -233,8 +231,10 @@ eng114_yourname_bastion
 
 - add security group
 
+- create or choose existing key
+
 - review and launch
-- 
+
 - to automate running your python script, you can add it in user data under step 3 - configuring instance.
 
 ### creating AMIs
@@ -279,7 +279,7 @@ eng114_yourname_bastion
 `sudo systemctl restart nginx`
 
 - #Make environment variable DB_HOST so that our app can connect to the database through port 27017
-`sudo echo "export DB_HOST='mongodb://3.250.139.104:27017/posts'" >> /etc/bash.bashrc`
+`sudo echo "export DB_HOST='mongodb://public ip of your DB:27017/posts'" >> /etc/bash.bashrc`
 `source /etc/bash.bashrc`
 
 - ##install npm
@@ -331,7 +331,7 @@ eng114_yourname_bastion
 
 `s3 = boto3.client('s3')`
 
-`s3.create_bucket(Bucket='eng114-bijay-bucket', CreateBucketConfiguration={`
+`s3.create_bucket(Bucket='name of your bucket', CreateBucketConfiguration={`
 
     `'LocationConstraint': 'eu-west-1'})`
 ## upload file to s3 bucket
@@ -341,7 +341,7 @@ eng114_yourname_bastion
 
 `s3.upload_file(`
 `Filename = 'test1.txt',`
-`Bucket = 'eng114-bijay-bucket',`
+`Bucket = 'name of your bucket',`
 `Key = 'test1.txt'
 `)`
 
@@ -352,20 +352,20 @@ eng114_yourname_bastion
 
 `s3.download_file(`
 
-    `Bucket="eng114-bijay-bucket", Key="test1.txt", Filename="test1.txt"`
+    `Bucket="name of bucket", Key="test1.txt", Filename="test1.txt"`
 ## delete file from s3 bucket
 - `import boto3`
 
 `s3 = boto3.resource('s3')`
 
-`s3.Object('eng114-bijay-bucket', 'test1.txt').delete()`
+`s3.Object('name of your bucket', 'test1.txt').delete()`
 
 ## delete s3 bucket
 - `import boto3`
 
 `s3 = boto3.client("s3")`
 
-`bucket_name = "eng114-bijay-bucket"`
+`bucket_name = "name of your bucket"`
 
 `client.delete_bucket(Bucket=bucket_name)`
 #
@@ -375,6 +375,10 @@ eng114_yourname_bastion
 ![CW-Overview](CW-Overview.png)
 - Questions to ask -
 - What should we monitor?
+- number of users-network
+- CPU utilisation
+- memory availability
+- Status 200- API to check health status of the instance
 - When should we monitor?
 - Who should be responsible?
 - What should be the next steps?
@@ -386,7 +390,6 @@ eng114_yourname_bastion
 - security breaches
 - system tests/health
 - instance's health
-- CPU utilisation
 #
 ## CloudWatch for monitoring and its use with other AWS services:
 ![cloudwatch](cloudwatch.png)
@@ -475,8 +478,6 @@ eng114_yourname_bastion
 - load balancer scheme - internet facing
 - create target group 
 - name target group
-
-![target-group](target-group.jpg)
 
 - target tracking scaling policy 
 ![target-tracking-scaling](target-tracking-scaling.png)
@@ -744,3 +745,74 @@ shell
 - build a second job for checking zone. Following the same step as above but use `date` for the command
 
 - click on console output to see if your job is successful and see more details on output.
+
+### Second iteration job
+
+- create a new job
+
+- before doing this, git clone app folder.
+
+- Copy app folder and environment folder to my local host where the github repo is
+- Git add ., Git commit, Git push to my repo
+ 
+
+![!jenkins-9](jenkins-9.png)
+
+- this time, check GitHub project and enter the http of your GitHub repo in project url
+
+- go down to office 365 connector section and check restrict where this project can be run. 
+- Enter agent node on label expression.
+
+![jenkins-10](jenkins-10.png)
+
+- Go down to source code management. Click on git and enter the repo url of ssh
+- enter your credentials by choosing from the scroll bar. Click add to add your private key you copied when you `cat` your private key 
+
+![jenkins-12](jenkins-12.png)
+
+- enter main for branches to build
+- go down to build environment section and check provide node and npm bin/folder to PATH
+- go to build and choose execute shell
+- enter this script
+- `cd app` `npm install` `npm test`
+
+#
+### Create a webhook and implementing it to the job
+
+- To create a webhook, go to settings on your GitHub repo
+- click on webhook on left panel
+
+![jenkins-13](jenkins-13.png)
+
+- click add webhook
+- add your jenkins url/githug-webhook/ on payload url. Choose application/json on content type
+
+![jenkins-14](jenkins-14.png)
+
+- choose let me individual events and check pushes. Check active as well.
+- Now we need to make it so that webhook connects to Jenkins
+- Go back to Jenkins and configure your job.
+- go to build trigger section and check GitHub hook trigger for GITScm polling
+- To test it, make changes to your readme.md and push it to GitHub. If it works, then you will see a new build being created automatically and you can see the commit and push you made on the change section of the build.
+#
+### Create a second iteration using dev branch
+
+- create a second job
+- do same step as before however this time:
+- Create a dev branch on local host using git bash
+
+- `git branch dev`
+- change to dev
+- `git checkout dev`
+- Go back to Jenkins
+- configure the job
+- go to source code management and change branch to build from main to dev
+- ![jenkins-15](jenkins-15.png)
+- go down to post-build actions
+- check push only if build succeeds
+- check merge result
+- click on branches and enter main for branches to push and enter origin for target remote name
+- Back on git bash,
+- edit readme.md
+- git add ., commit and push to GitHub
+- Go back to Jenkins. If test is successful, you will see a new build and you will see any changes you made to your readme.md in your main and dev branch. This means that whatever you push from your dev branch to jenkins have now been pushed to your main branch or your dev and main branch merge if test pass.
