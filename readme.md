@@ -1,12 +1,3 @@
-- test a ssh connection
-- cicd fourth test push
-- cicd fifth test push
--cicd sixth test push
-- dev branch test
-- dev merge main test
-- dev test 2
-- dev test 3
--dev test 5x
 # DevOps 30/05/22
 ## What is DevOps?
 - DevOps is a set of practices and cultural philosophy that removes the barriers between traditionally siloed teams that are the development and operations teams. Under a DevOps model, development and operations teams work together across the entire software application life cycle, from development and test through deployment to operations. 
@@ -818,3 +809,31 @@ shell
 - edit readme.md
 - git add ., commit and push to GitHub
 - Go back to Jenkins. If test is successful, you will see a new build and you will see any changes you made to your readme.md in your main and dev branch. This means that whatever you push from your dev branch to jenkins have now been pushed to your main branch or your dev and main branch merge if test pass.
+#
+### How to copy files from Jenkins to EC2
+- use the command below:
+- `rsync -avz -e "ssh -o StrictHostKeyChecking=no" location of app folder ubuntu@ipaddress:ubuntu/`
+#
+### Using script to automate app to EC2
+- `rsync -avz -e "ssh -o StrictHostKeyChecking=no" location of app folder ubuntu@ipaddress:ubuntu/`
+- `rsync -avz -e "ssh -o StrictHostKeyChecking=no" name of provision file for app ubuntu@ipaddress:ubuntu/`
+- `rsync -avz -e "ssh -o StrictHostKeyChecking=no" default ubuntu@ipaddress:ubuntu/`
+- `ssh -A -o "StrictHostKeyChecking=no" ubuntu@ipaddress <<EOF`
+- `cd ubuntu`
+
+- `sudo chmod +x name of provision file for app`
+- `./name of provision file for app`
+- Note: EOF is used when switching from Jenkins server to EC2
+#
+### How to create Jenkins server using EC2 instance
+- Launch an EC2 instance that is using Ubuntu 18.4
+- SSH into your instance and do update and upgrade
+
+- install java
+- isntall Jenkins
+- To build our NodeJS app, we need to configure Jenkins
+- To do this, click on manage Jenkins and then manage plugins in the Jenkins dashboard
+- Install NodeJS and SSH agent
+- CLick on the Global Tool Configuration tab and scroll down to NodeJS. click Add NodeJS and then name your NodeJS installation. lastly, to allow us to build app on the Jenkins server for testing, select version 13.3.0 
+#
+## Infrastructure as Code (IaC)
