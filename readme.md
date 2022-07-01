@@ -829,11 +829,30 @@ shell
 - Launch an EC2 instance that is using Ubuntu 18.4
 - SSH into your instance and do update and upgrade
 
-- install java
-- isntall Jenkins
+- install java using the following commands below:
+- `sudo apt update`
+- `java -version`
+- ` sudo apt install default-jre`
+- `sudo apt install default-jdk`
+- `javac -version`
+- install Jenkins using the following commands below:
+- `wget -q -O - https://pkg.jenkins.io/debian-stable/jenkins.io.key | sudo apt-key add -`
+- `sudo sh -c 'echo deb http://pkg.jenkins.io/debian-stable binary/ > /etc/apt/sources.list.d/jenkins.list'`
+- `sudo apt update`
+- `sudo apt install jenkins`
+- start Jenkins
+- `sudo systemctl start jenkins`
+- `sudo systemctl status jenkins`
+- open firewall to allow Jenkins by opening port 8080:
+- `sudo ufw allow 8080`
+- `sudo ufw status`
+- Set up Jenkins using below command:
+- `sudo cat /var/lib/jenkins/secrets/initialAdminPassword`
 - To build our NodeJS app, we need to configure Jenkins
 - To do this, click on manage Jenkins and then manage plugins in the Jenkins dashboard
 - Install NodeJS and SSH agent
 - CLick on the Global Tool Configuration tab and scroll down to NodeJS. click Add NodeJS and then name your NodeJS installation. lastly, to allow us to build app on the Jenkins server for testing, select version 13.3.0 
 #
 ## Infrastructure as Code (IaC)
+### What is IaC?
+### What are the benefits of IaC?
