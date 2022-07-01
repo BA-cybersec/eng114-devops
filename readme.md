@@ -859,6 +859,7 @@ shell
 
 - With IaC, configuration files are created that contain your infrastructure specifications, which makes it easier to edit and distribute configurations. It also ensures that you provision the same environment every time. 
 - By codifying and documenting your configuration specifications, IaC aids configuration management and helps you to avoid undocumented, ad-hoc configuration changes.
+#
 ### What are the benefits of IaC?
 - Improved productivity: Administrators and operators no longer must perform manual configuration steps for data center infrastructure changes.
 
@@ -881,6 +882,7 @@ shell
 - is an open sourceIT automation tool that automates provisioning, configuration management, application deployment, orchestration, and many other manual IT processes. 
 
 - Unlike more simplistic management tools, Ansible users (like system administrators, developers and architects) can use Ansible automation to install software, automate daily tasks, provision infrastructure, improve security and compliance, patch systems, and share automation across the entire organization.
+#
 ### What are the benefits of Ansible?
 - Very simple to set up and use: No special coding skills are necessary to use Ansible’s playbooks (more on playbooks later)and is supported by YAML.
 - Powerful: Ansible lets you model even highly complex IT workflows. 
@@ -891,6 +893,7 @@ shell
 - Agentless: You don’t need to install any other software or firewall ports on the client systems you want to automate. You also don’t have to set up a separate management structure. The connection can be done through the SSH or using the Python.
 - Efficient: Because you don’t need to install any extra software, there’s more room for application resources on your server.
 - Low Overhead: As it is agentless and does not require any servers, daemons, or databases it can provide a lot of space in the systems and has low overhead in terms of deployment.
+#
 ### How does Ansible, Terraform and IaC fit into Devops?
 - DevOps requires creating, updating and changing infrastructure for various environments(development, testing, staging, live)
 
@@ -900,7 +903,7 @@ shell
 - The benefits of Ansible in DevOps is to respond and scale in pace with the demand. Other benefits of ansible in DevOps is the feedback loop is accelerated at a faster rate. The bugs are found sooner and not wait till the end. Risk due to lack of sufficient knowledge is mitigated. The deployments are reliable. The IT infrastructure is coordinated. The deployments are faster. 
 - With the infrastructure setup written as code, it can go through the same version control, automated testing and other steps of a continuous integration and continuous delivery (CI/CD) pipeline that developers use for application code. 
 - An organisation may choose to combine infrastructure as code with containers, which abstract the application from the infrastructure at the operating system level. Because the OS and hardware infrastructure are provisioned automatically and the application is encapsulated atop it, these technologies prove complementary for diverse deployment targets, such as test, staging and production.
-- 
+#
 ### How does this benefit businesses?
 - Time is saved
 
