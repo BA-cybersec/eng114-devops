@@ -914,3 +914,86 @@ shell
 - Product environments can quickly change and adapt
 
 - Products and product changes are delivered quickly to customers
+#
+### How to install Ansible on Ubuntu 18.04
+- use the following commands below:
+- `sudo apt-get install software-properties-common`
+
+- `sudo apt-add-repository ppa:ansible/ansible`
+
+- `sudo apt-get update -y`
+
+- `sudo apt-get install ansible -y`
+
+- `ansible --version`
+
+- Ping machine in ansible `ansible (group or server name or 'all') -m ping`
+
+### Allow for ssh into other machines by configuring ansible
+- go to `/ect/ansible`
+
+- `sudo vim hosts`
+
+- Enter the following: -`[group name]` - Grouping vms is useful for the configuration of autoscaling groups
+
+- `vm.ip.here.pls ansible_connection=ssh ansible_ssh_user=vagrant ansible_ssh_pass=vagrant`
+
+### Vagrant commands
+SSH into a VM from another VM: `ssh vagrant@target-ip` - the password you will be prompted for is `vagrant`
+
+### Ansible ad-hoc commands
+ - Ad-hoc commands can be run through ansible on our nodes from our controller node.
+
+- `ansible web -a "uname -a" `
+
+- `ansible web -a "date" `
+
+- `ansible web -a "free"`
+
+- `ansible web -m copy -a "src=/etc/ansible/connection_test.txt dest=home/"`
+
+### Ansible playbooks
+- Create an ansible playbooks in `/etc/ansible`
+
+- playbooks are in .yml format(YAML)
+
+run `ansible-playbook playbook_name.yml` to activate playbook commands
+
+`ansible-playbook playbook_name.yml --syntax-check` -  Checks playbook syntax
+#
+### 2-tier hybrid architecture with Ansible and AWS
+
+- Setting up Ansible to ssh into AWS
+
+- Create a new folder in `/etc/ansible`
+-  `sudo mkdir group_vars`
+
+- Within group_vars create a folder named all - `sudo mkdir all`
+
+- `sudo vim pass.yml - create pass.yml file`
+
+- `sudo ansible-vault create pass.yml`
+
+- Create and confirm a password when prompted
+
+- Enter `aws_access_key: <aws_access_key>` in the file
+
+- Enter `aws_secret_key: <aws_secret_key>` in the file
+
+- `sudo chmod 666 pass.yml`
+
+### Generating .pem and .pub keys
+In your .ssh folder on your ansible controller, copy over your .pem file and run `sudo chmod 400 eng114.pem`
+
+- `ssh-keygen -t rsa` will generate a new .pub file, enter a name when prompted and press enter for everything else
+
+### Adding ec2 to hosts
+- Go to `/etc/ansible`
+
+- `sudo vim hosts` and add the following:
+
+- `[aws]`
+
+- `ec2-instance ansible_host=ec2.ip.goes.here ansible_user=ubuntu ansible_ssh_private_key_file=~/.ssh/eng114.pem`
+
+- `sudo ansible-playbook file_name.yml --ask-vault-pass --tags create_ec2`
